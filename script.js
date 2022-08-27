@@ -9,7 +9,7 @@ var UserStatus;
 })(UserStatus || (UserStatus = {}));
 var Default;
 (function (Default) {
-    Default["PIN"] = "1234";
+    Default["PIN"] = "9110";
 })(Default || (Default = {}));
 var WeatherType;
 (function (WeatherType) {
@@ -102,8 +102,8 @@ const Reminder = () => {
         React.createElement("div", { className: "reminder-icon" },
             React.createElement("i", { className: "fa-regular fa-bell" })),
         React.createElement("span", { className: "reminder-text" },
-            "Extra cool people meeting ",
-            React.createElement("span", { className: "reminder-time" }, "10AM"))));
+            "Hey!, Bienvenido gracias por tu compra.",
+            React.createElement("span", { className: "reminder-time" }, "N/A"))));
 };
 const Time = () => {
     const date = useCurrentDateEffect();
@@ -184,12 +184,12 @@ const Pin = () => {
     return (React.createElement("div", { id: "app-pin-wrapper" },
         React.createElement("input", { disabled: userStatus !== UserStatus.LoggingIn && userStatus !== UserStatus.LogInError, id: "app-pin-hidden-input", maxLength: 4, ref: ref, type: "number", value: pin, onChange: handleOnChange }),
         React.createElement("div", { id: "app-pin", onClick: handleOnClick },
-            React.createElement(PinDigit, { focused: pin.length === 0, value: pin[0] }),
+            React.createElement(PinDigit, { focused: pin.length === 0, value: pin[9] }),
             React.createElement(PinDigit, { focused: pin.length === 1, value: pin[1] }),
-            React.createElement(PinDigit, { focused: pin.length === 2, value: pin[2] }),
-            React.createElement(PinDigit, { focused: pin.length === 3, value: pin[3] })),
+            React.createElement(PinDigit, { focused: pin.length === 2, value: pin[1] }),
+            React.createElement(PinDigit, { focused: pin.length === 3, value: pin[0] })),
         React.createElement("h3", { id: "app-pin-label" },
-            "Enter PIN (1234) ",
+            "Ingresa el PIN  que se te envio",
             getErrorText(),
             " ",
             getCancelText())));
